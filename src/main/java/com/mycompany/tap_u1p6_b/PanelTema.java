@@ -4,6 +4,8 @@
  */
 package com.mycompany.tap_u1p6_b;
 
+import com.mycompany.tap_u1p6_b.pojos.Tema;
+
 /**
  *
  * @author hfyh
@@ -13,8 +15,17 @@ public class PanelTema extends javax.swing.JPanel {
     /**
      * Creates new form PanelTema
      */
+    private Tema tema;
+    
     public PanelTema() {
         initComponents();
+    }
+    
+    public PanelTema(Tema tema) {
+        this.tema = tema;
+        String nombreTema = this.tema.getTituloTema();
+        initComponents();
+        lblTituloTema.setText(nombreTema);
     }
 
     /**
@@ -26,45 +37,29 @@ public class PanelTema extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblTituloTema = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        jLabel1.setText("Nombre de tema");
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTituloTema.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lblTituloTema.setText("Nombre de tema");
+        add(lblTituloTema, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 174, 42));
 
         jButton1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jButton1.setText("Ver subtemas");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(186, 10, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jButton2.setText("Borrar");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addComponent(jButton2))
-        );
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(308, 10, 87, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblTituloTema;
     // End of variables declaration//GEN-END:variables
 }

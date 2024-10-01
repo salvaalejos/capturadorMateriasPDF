@@ -16,8 +16,12 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.mycompany.tap_u1p6_b.pojos.Materia;
 import com.mycompany.tap_u1p6_b.pojos.Subtema;
 import com.mycompany.tap_u1p6_b.pojos.Tema;
+import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
+import javax.swing.BoxLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -31,11 +35,14 @@ public class PanelMateria extends javax.swing.JPanel {
     private Materia materia;
     private String nombreMateria;
     private ArrayList<Tema> temas = new ArrayList<>();
+    private JPanel panelTemas;
+    
     
     public PanelMateria() {
         initComponents();
     }
-    public PanelMateria(Materia materia) {
+    public PanelMateria(Materia materia, JPanel panelTemas) {
+        this.panelTemas = panelTemas;
         this.temas = materia.getTemas();
         this.materia = materia;
         this.nombreMateria = this.materia.getNombreMateria();
@@ -56,12 +63,21 @@ public class PanelMateria extends javax.swing.JPanel {
         btnVer = new javax.swing.JButton();
         btnPDF = new javax.swing.JButton();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         lblMateria.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lblMateria.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblMateria.setText("Nombre de la materia");
+        add(lblMateria, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 0, 191, 42));
 
         btnVer.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnVer.setText("Ver");
+        btnVer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerActionPerformed(evt);
+            }
+        });
+        add(btnVer, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 10, -1, -1));
 
         btnPDF.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         btnPDF.setText("PDF");
@@ -70,27 +86,7 @@ public class PanelMateria extends javax.swing.JPanel {
                 btnPDFActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblMateria, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnVer)
-                .addGap(18, 18, 18)
-                .addComponent(btnPDF)
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(lblMateria, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
-                .addComponent(btnVer)
-                .addComponent(btnPDF))
-        );
+        add(btnPDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPDFActionPerformed
@@ -154,6 +150,23 @@ public class PanelMateria extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnPDFActionPerformed
 
+    private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerActionPerformed
+        // TODO add your handling code here:
+        generarPaneles();
+    }//GEN-LAST:event_btnVerActionPerformed
+
+    private void generarPaneles(){
+        panelTemas.setLayout(new BoxLayout(panelTemas, BoxLayout.Y_AXIS));
+        this.panelTemas.removeAll();
+        for (Tema t : temas) {
+            PanelTema panel = new PanelTema(t);
+            panelTemas.add(panel);
+        }
+        panelTemas.revalidate();
+        panelTemas.repaint();
+        panelTemas.updateUI();
+    }
+    
     private String obtenerSubtemas(Tema t, int index){
         String subtemasFormateados ="";
         ArrayList<Subtema> listaSubtemas = new ArrayList<>();

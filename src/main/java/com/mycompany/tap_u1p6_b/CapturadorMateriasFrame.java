@@ -43,7 +43,6 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         bgPanel = new javax.swing.JPanel();
-        btnDarkLightMode = new javax.swing.JToggleButton();
         panelMenu = new javax.swing.JPanel();
         panelTitulo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -53,6 +52,7 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
         btnAyuda = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator3 = new javax.swing.JSeparator();
+        btnDarkLightMode = new javax.swing.JToggleButton();
         menuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -72,15 +72,6 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
         bgPanel.setBackground(new java.awt.Color(255, 255, 255));
         bgPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnDarkLightMode.setBackground(new java.awt.Color(87, 134, 236));
-        btnDarkLightMode.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnDarkLightMode.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDarkLightModeActionPerformed(evt);
-            }
-        });
-        bgPanel.add(btnDarkLightMode, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 40, 40));
-
         panelMenu.setBackground(new java.awt.Color(87, 134, 236));
         panelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -95,14 +86,14 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
         panelTitulo.setLayout(panelTituloLayout);
         panelTituloLayout.setHorizontalGroup(
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
         );
         panelTituloLayout.setVerticalGroup(
             panelTituloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        panelMenu.add(panelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 40));
+        panelMenu.add(panelTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 40));
 
         btnExit.setBackground(new java.awt.Color(87, 134, 236));
         btnExit.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -114,7 +105,7 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        panelMenu.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 210, 40));
+        panelMenu.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 460, 40));
 
         btnCapturador.setBackground(new java.awt.Color(87, 134, 236));
         btnCapturador.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -126,7 +117,7 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
                 btnCapturadorActionPerformed(evt);
             }
         });
-        panelMenu.add(btnCapturador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 210, 40));
+        panelMenu.add(btnCapturador, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 460, 40));
 
         btnTemario.setBackground(new java.awt.Color(87, 134, 236));
         btnTemario.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -138,7 +129,7 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
                 btnTemarioActionPerformed(evt);
             }
         });
-        panelMenu.add(btnTemario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 210, 40));
+        panelMenu.add(btnTemario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 460, 40));
 
         btnAyuda.setBackground(new java.awt.Color(87, 134, 236));
         btnAyuda.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
@@ -150,15 +141,24 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
                 btnAyudaActionPerformed(evt);
             }
         });
-        panelMenu.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 243, 210, 40));
+        panelMenu.add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 243, 460, 40));
 
         jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
-        panelMenu.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 210, 10));
+        panelMenu.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 460, 10));
 
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
-        panelMenu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 193, 190, 10));
+        panelMenu.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 193, 440, 10));
 
-        bgPanel.add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 390));
+        btnDarkLightMode.setBackground(new java.awt.Color(87, 134, 236));
+        btnDarkLightMode.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnDarkLightMode.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDarkLightModeActionPerformed(evt);
+            }
+        });
+        panelMenu.add(btnDarkLightMode, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, 40, 40));
+
+        bgPanel.add(panelMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 390));
 
         menuBar.setBackground(new java.awt.Color(87, 134, 236));
         menuBar.setForeground(new java.awt.Color(255, 255, 255));
@@ -210,7 +210,7 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bgPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 457, Short.MAX_VALUE)
+            .addComponent(bgPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,7 +243,7 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
             menuBar.setBackground(colorPrimaryDark);
             menuBar.setForeground(Color.WHITE);
             btnDarkLightMode.setIcon(new ImageIcon("src\\main\\java\\Images\\dark-mode.png"));
-            btnDarkLightMode.setBackground(new Color(69, 67, 164));
+            btnDarkLightMode.setBackground(colorPrimaryDark);
             panelMenu.setBackground(colorPrimaryDark);
             panelTitulo.setBackground(colorSecundaryDark);
             btnCapturador.setBackground(colorPrimaryDark);
@@ -255,7 +255,7 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
             menuBar.setBackground(colorPrimaryLigth);
             menuBar.setForeground(Color.BLACK);
             btnDarkLightMode.setIcon(new ImageIcon("src\\main\\java\\Images\\light-mode.png"));
-            btnDarkLightMode.setBackground(colorPrimaryLigth);
+            btnDarkLightMode.setBackground(colorSecundaryLigth);
             panelMenu.setBackground(colorPrimaryLigth);
             panelTitulo.setBackground(colorSecundaryLigth);
             btnCapturador.setBackground(colorPrimaryLigth);
@@ -270,16 +270,14 @@ public class CapturadorMateriasFrame extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         if(btnDarkLightMode.isSelected()){
-            menuBar.setBackground(new Color(69, 67, 164));
             menuBar.setForeground(Color.WHITE);
             btnDarkLightMode.setIcon(new ImageIcon("src\\main\\java\\Images\\dark-mode.png"));
-            btnDarkLightMode.setBackground(new Color(69, 67, 164));
+            btnDarkLightMode.setBackground(colorPrimaryDark);
             FlatDarkLaf.setup();
         }else{
-            menuBar.setBackground(new Color(87,134,236));
             menuBar.setForeground(Color.BLACK);
             btnDarkLightMode.setIcon(new ImageIcon("src\\main\\java\\Images\\light-mode.png"));
-            btnDarkLightMode.setBackground(new Color(87,134,236));
+            btnDarkLightMode.setBackground(colorSecundaryLigth);
             FlatLightLaf.setup();
         }
         SwingUtilities.updateComponentTreeUI(this);
